@@ -1,0 +1,10 @@
+#!/bin/bash
+if [[ "$1" == "--help" ||  "$1" == "-h" ]]
+then
+  echo "Usage: timer hours minutes seconds"
+  echo "E.g.: timer 1 20 15"
+  echo "-> will ring in 1h 20min 15sec"
+else
+  sleep $(("$1" * 60 * 60 + "$2" * 60 + "$3"))
+  mplayer -vo null "PATH TO MUSIC / SOUND"
+fi
